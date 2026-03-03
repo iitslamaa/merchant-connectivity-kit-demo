@@ -45,7 +45,9 @@ public final class CardSwitcher: @unchecked Sendable {
             throw CardSwitcherError.cancelled
         }
 
-        if Double.random(in: 0...1) < config.failureRate {
+        let randomValue = Double.random(in: 0...1)
+
+        if randomValue < config.failureRate {
             throw CardSwitcherError.networkFailure
         }
     }
