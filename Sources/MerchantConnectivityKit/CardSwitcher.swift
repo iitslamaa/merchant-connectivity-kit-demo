@@ -35,7 +35,7 @@ public final class CardSwitcher: @unchecked Sendable {
             throw CardSwitcherError.invalidMerchant
         }
 
-        guard card.last4.count == 4 else {
+        guard card.last4.count == 4, card.last4.allSatisfy({ $0.isNumber }) else {
             throw CardSwitcherError.invalidCard
         }
 
@@ -44,6 +44,9 @@ public final class CardSwitcher: @unchecked Sendable {
         } catch {
             throw CardSwitcherError.cancelled
         }
+
+        // Check cancellation again after simulated work
+        try Task.checkCancellation()
 
         let randomValue = Double.random(in: 0...1)
 
