@@ -36,3 +36,18 @@ Future improvements
 • Performance profiling with Instruments
 • WKWebView merchant session layer
 
+```
+let sdk = CardSwitcher()
+
+Task {
+    do {
+        try await sdk.updateCard(
+            for: Merchant(id: "netflix", name: "Netflix"),
+            with: Card(last4: "1234", expirationMMYY: "0129")
+        )
+        print("Card updated")
+    } catch {
+        print("Failed:", error)
+    }
+}
+```
