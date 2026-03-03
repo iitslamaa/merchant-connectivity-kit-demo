@@ -1,17 +1,16 @@
-# MerchantConnectivityKit (Demo SDK)
+# MerchantConnectivityKit
 
-This project is a small demonstration of how I approach designing an embedded iOS SDK.
+A demo Swift Package showing how I approach designing an embedded iOS SDK.
 
-The goal is to demonstrate:
-
+## Goals
 - Clean public API design
-- Async / await concurrency patterns
+- Async/await concurrency patterns
 - Explicit error modeling
 - Cancellation safety
-- Unit testing discipline
-- SDK integration ergonomics
+- Unit testing of failure modes
+- Integration ergonomics for host apps
 
-## Example Usage
+## Example
 
 ```swift
 import MerchantConnectivityKit
