@@ -21,3 +21,18 @@ try await cardSwitcher.updateCard(
     for: Merchant(id: "netflix", name: "Netflix"),
     with: Card(last4: "1234", expirationMMYY: "0129")
 )
+
+Design considerations
+
+• Typed errors for predictable SDK behavior
+• Cancellation-aware async operations
+• Configuration injection for deterministic tests
+• Minimal public surface area to maintain API stability
+
+Future improvements
+
+• Retry policies
+• SDK versioning strategy
+• Performance profiling with Instruments
+• WKWebView merchant session layer
+
